@@ -1,36 +1,66 @@
 import { FaTwitter } from "react-icons/fa";
 import { RiHome7Fill } from "react-icons/ri";
-
+import { BsBell } from "react-icons/bs";
+import { BiHash } from "react-icons/bi";
+import { SlEnvolope } from "react-icons/sl";
+import { FaRegBookmark } from "react-icons/fa";
+import { FaUser } from "react-icons/fa6";
+import { Inter } from "next/font/google";
 interface Twittersidebarbutton {
-  title: string; // Title for the sidebar button
-  icon: React.ReactNode; // Icon component
+  title: string; 
+  icon: React.ReactNode; 
 }
 
-// Sidebar menu items
+// Sidebar menu items 
 const sidemenuItems: Twittersidebarbutton[] = [
   {
     title: "Home",
     icon: <RiHome7Fill />,
   },
+  {
+    title:"Explore",
+    icon:<BiHash />
+
+  },
+  {
+    title:"notifications",
+    icon:<BsBell />
+
+  },
+  {
+    title:"Messages",
+    icon:<SlEnvolope />
+  },
+  {
+    title:"Bookmarks",
+    icon:<FaRegBookmark />
+  },
+  {
+  title:"Profile",
+  icon:<FaUser />
+  }
 ];
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-12 h-screen w-screen px-56">
+    
+      <div className="grid grid-cols-12 h-screen w-screen px-56 ">
       {/* Left Section */}
-      <div className="col-span-3 flex flex-col justify-start p-8">
+      <div className="col-span-3 flex flex-col justify-start p-7 p gap-1">
         {/* Twitter Icon */}
-        <FaTwitter className="text-6xl hover:bg-gray-600 rounded-full p-3 cursor-pointer transition-all mb-8" />
+        <FaTwitter className="text-6xl hover:bg-gray-600 rounded-full p-2 cursor-pointer transition-all mb-8" />
         
-        {/* Sidebar Menu */}
-        <ul className="space-y-4">
+        {/* Sidebar Menu */} 
+        <ul className="space-y-">
           {sidemenuItems.map((item, index) => (
-            <li key={index} className="flex items-center gap-4 text-lg">
+            <li  
+            key={index} className="flex items-center gap-2 text-lg hover:bg-gray-800 rounded-full px-4 py-1 cursor-pointer ">
               <span>{item.icon}</span>
               <span>{item.title}</span>
-            </li>
+            </li> 
           ))}
         </ul>
+         <button className="bg-[#1d9bf0]  text-sm  p-3 rounded-full w-full mt-4  "  >Tweet </button>
       </div>
 
       {/* Middle Section */}
@@ -38,6 +68,6 @@ export default function Home() {
 
       {/* Right Section */}
       <div className="col-span-3"></div>
-    </div>
-  );
+  
+    </div>  );
 }
