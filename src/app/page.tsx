@@ -6,6 +6,7 @@ import { SlEnvolope } from "react-icons/sl";
 import { FaRegBookmark } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { Inter } from "next/font/google";
+import FeedCard from "../../components/feedcards";
 interface Twittersidebarbutton {
   title: string; 
   icon: React.ReactNode; 
@@ -60,11 +61,13 @@ export default function Home() {
             </li> 
           ))}
         </ul>
-         <button className="bg-[#1d9bf0]  text-sm  p-3 rounded-full w-full mt-4  "  >Tweet </button>
+         <button className="bg-[#1d9bf0] font-bold text-sm  p-3 rounded-full w-full mt-4  "  >Tweet </button>
       </div>
 
       {/* Middle Section */}
-      <div className="col-span-6 border-r-[0.1px] border-l-[0.1px] border-gray-400 h-full"></div>
+      <div className="col-span-6 border-r-[0.1px] border-l-[0.1px] border-gray-400 h-full">
+        <FeedCard /> 
+      </div>
 
       {/* Right Section */}
       <div className="col-span-3"></div>
