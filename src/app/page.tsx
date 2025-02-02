@@ -67,6 +67,7 @@ export default function Home() {
       {/* Middle Section */}
       <div className="col-span-6 border-r-[0.1px] border-l-[0.1px] border-gray-400 h-full">
         <FeedCard /> 
+
       </div>
 
       {/* Right Section */}
